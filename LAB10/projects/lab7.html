@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime or Composite</title>
+    
+    <style>
+        *{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+           text-align: center;
+           font-size: medium;
+        }
+        body{
+            color: white;
+            background-image: url(images/even.jpg);
+            
+        }
+        main{
+            border: solid 1px red;
+        }
+        input{
+            border-radius:10px 0px 10px 0px ;
+            
+            background-color:  rgb(241, 236, 236,0.3);
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <header> <h1>Prime Or Composite checker</h1></header>
+    <main>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Quis quae cupiditate omnis iure, aspernatur <br>
+            quam, nostrum
+            fuga autem pariatur totam odio maxime porro, <br> voluptatem accusantium
+             ea deserunt distinctio consequuntur? Laudantium!
+
+        </p>
+        <div id="checker">
+            <b> Enter only positive number</b>  <br><br>
+        <input type="number" id="number" placeholder="Enter a positive number"><br> <br>
+        <button type="button" id="submit" onclick="chec()">Show result</button>
+        <button id="refresh" onclick="ref() ">Click here to refresh</button>
+        <p id="demo"></p>
+        <p id="good"></p>
+
+        </div>
+         
+       
+    </main>
+    <script>
+        function chec(){
+            var number= (document.getElementById('number')).value;
+            
+            let i=2;
+            flag=0;
+            for(i=2;i<=number/2;i++){
+                if(number%i==0){
+                        flag=1;
+
+                    }
+                    else{
+                        flag=0;
+                    }
+                }
+            if (flag==0) {
+                document.getElementById('demo').innerHTML="It is a prime number";
+            }    
+            else{
+                document.getElementById('demo').innerHTML="It is composite number";
+            }
+        
+        
+
+        }
+        function ref(){
+            document.getElementById('number').innerHTML='   ';
+        }
+        
+    </script>
+    
+</body>
+</html>

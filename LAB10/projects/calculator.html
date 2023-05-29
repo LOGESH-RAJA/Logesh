@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    
+    <style>
+        body{
+            background-image: url(images/pexels-todd-trapani-1420440.jpg);
+        }
+        table,tr,td{
+            border-style: solid;
+            border-width: 3px;
+            
+        }
+        input{
+            border-radius: 5px;
+            padding: 5px;
+            
+            
+        }
+        input#number{
+            border-radius: 21px;
+            width: 50px;
+
+        }
+        input#clear{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;color: cadetblue;">Calculator</h1>
+    <table style="align-items: center; ">
+        <tr>
+            <td colspan="3"><input type="text" id="text" style="text-align: right;"></td>
+            <td><input type="button" id="clear" onclick="clr()" value="c"></td>
+        </tr>
+        <tr>
+           <td><input type="button" value="1" id="number" onclick="display('1')"></td>
+           <td ><input type="button" value="2" id="number" onclick="display('2')"></td>
+           <td> <input type="button" value="3" id="number" onclick="display('3')"></td>
+           <td> <input type="button" value="-" id="number" onclick="display('-')"></td>
+        </tr> 
+        <tr>
+            <td><input type="button" value="4" id="number" onclick="display('4')"></td>
+            <td ><input type="button" value="5" id="number" onclick="display('5')"></td>
+            <td> <input type="button" value="6" id="number" onclick="display('6')"></td>
+            <td> <input type="button" value="+" id="number" onclick="display('+')"></td></td>
+         </tr> 
+         <tr>
+            <td><input type="button" value="7" id="number" onclick="display('7')"></td>
+            <td ><input type="button" value="8" id="number" onclick="display('8')"></td>
+            <td> <input type="button" value="9" id="number" onclick="display('9')"></td>
+            <td> <input type="button" value=" = " id="number" onclick="ev()"></td>
+
+         </tr>
+       
+
+    </table>
+    <p id="demo"></p>
+    <script>
+        function display(val){
+          
+          var process = (document.getElementById('text').value+=val);
+    }
+    function ev(){
+        let x= document.getElementById('text').value;
+        console.log(x);
+        let y= eval(x);
+        document.getElementById('demo').innerHTML=y;
+
+       
+    }
+    function clr(){
+         document.getElementById('text').innerHTML=' ';
+         
+    }
+
+    </script>
+ 
+
+    
+    
+</body>
+</html>
